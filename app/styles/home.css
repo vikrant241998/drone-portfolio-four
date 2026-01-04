@@ -1,0 +1,105 @@
+/* --- Hero Section (Grid/Flex mix for centering) --- */
+.hero {
+  /* Navbar ki height adjust karke bachi hui jagah lega */
+  /* min-height: calc(100vh - 80px);
+  background: url("https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?q=80&w=2000")
+    no-repeat center center/cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  padding: 40px 20px; */
+
+  /* min-height: 100vh; */
+  background: url("https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?q=80&w=2000")
+    no-repeat center center/cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  padding: 20px;
+
+  /* Kyunki header fixed hai, toh hero ko thoda padding-top 
+       dena padega taaki content header ke niche na chhup jaye */
+  padding-top: 80px;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0; /* shortcut for top, left, bottom, right: 0 */
+  background: rgba(0, 0, 0, 0.6);
+}
+
+/* --- Content Box & Brackets --- */
+.content-box {
+  position: relative;
+  z-index: 2;
+  padding: clamp(28px, 1vw, 35px);
+  width: fit-content;
+  max-width: 95%;
+  margin-top: 1.5rem;
+}
+
+.red-bracket {
+  position: absolute;
+  /* Brackets hamesha text ke proportional rahenge */
+  width: clamp(40px, 20%, 100px);
+  height: clamp(60px, 100%, 150px);
+  border: clamp(4px, 0.8vw, 8px) solid #ff0000;
+}
+
+.hero-heading {
+  font-size: clamp(1.5rem, 5vw, 3.5rem);
+  text-transform: uppercase;
+  font-weight: 600;
+  line-height: 1.1;
+  color: white;
+  font-family: sans-serif;
+  word-spacing: 10px;
+}
+
+.left {
+  top: 0;
+  left: 0;
+  border-right: none;
+  border-bottom: none;
+}
+
+.right {
+  bottom: 0;
+  right: 0;
+  border-left: none;
+  border-top: none;
+}
+
+/* --- Drone Image & Animation --- */
+.drone-container {
+  margin-top: clamp(20px, 4vh, 60px);
+  z-index: 3;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.floating-drone {
+  /* Drone mobile par chhota aur desktop par bada hoga */
+  width: clamp(200px, 40vw, 550px);
+  height: auto;
+  filter: drop-shadow(0 20px 30px rgba(0, 0, 0, 0.5));
+  animation: floatLoop 4s ease-in-out infinite;
+}
+
+/* Smooth Floating Animation */
+@keyframes floatLoop {
+  0%,
+  100% {
+    transform: translateY(0px) rotate(-1deg);
+  }
+  50% {
+    transform: translateY(-25px) rotate(1deg);
+  }
+}

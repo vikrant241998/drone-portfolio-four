@@ -1,0 +1,6 @@
+/* Is line ko globals.css se hata dein */
+@import 'aos/dist/aos.css';
+@import "tailwindcss";
+html {
+  scroll-behavior: smooth;
+}

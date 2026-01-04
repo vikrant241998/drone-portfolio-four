@@ -1,0 +1,141 @@
+/* --- Global Styles for Section --- */
+.srv-section {
+  padding: 80px 0;
+  background-color: #fff;
+  font-family: "Arial", sans-serif;
+}
+
+.srv-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Header Styling */
+.srv-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  margin-bottom: 50px;
+  gap: 30px;
+}
+
+.srv-subtitle {
+    color: #e32626;
+    font-weight: 800;
+    font-size: 40px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 15px;
+    letter-spacing: 2px;
+}
+
+.srv-red-line {
+  width: 25px;
+  height: 2px;
+  background-color: #e32626;
+}
+
+.srv-main-title {
+  font-size: clamp(28px, 4vw, 40px);
+  font-weight: 800;
+  color: #111;
+}
+
+.srv-right p {
+  /* max-width: 450px; */
+  color: #666;
+  line-height: 1.6;
+  font-size: 20px;
+}
+
+/* --- Grid System --- */
+.srv-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Desktop: 3 Columns */
+  gap: 20px;
+}
+
+.srv-item {
+  position: relative;
+  aspect-ratio: 1 / 1; /* Square images */
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.srv-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+  transition: transform 0.5s ease;
+}
+
+/* --- Hover Overlay Logic --- */
+.srv-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.95);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 30px;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.4s ease;
+  margin: 20px;
+  border-radius: 5px;
+}
+
+.srv-item:hover .srv-overlay {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.srv-item:hover img {
+  transform: scale(1.1);
+}
+
+/* Hover Box Content */
+.srv-hover-box h3 {
+  font-size: 24px;
+  font-weight: 800;
+  margin-bottom: 15px;
+  color: #111;
+}
+
+.srv-hover-box p {
+  font-size: 15px;
+  color: #555;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.srv-hover-box a {
+  color: #e32626;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 16px;
+  display: inline-block;
+}
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 992px) {
+  .srv-grid {
+    grid-template-columns: repeat(2, 1fr); /* Tablet: 2 Columns */
+  }
+  .srv-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 576px) {
+  .srv-grid {
+    grid-template-columns: 1fr; /* Mobile: 1 Column */
+  }
+  .srv-hover-box h3 {
+    font-size: 20px;
+  }
+}
